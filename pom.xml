@@ -1,10 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example</groupId>
   <artifactId>demo-maven</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.2-SNAPSHOT</version>
   <name>demo-maven</name>
   <url>http://maven.apache.org</url>
 
@@ -42,6 +41,7 @@
     <connection>scm:git:https://github.com/zhangzhaonnx/demo-maven.git</connection>
     <url>https://github.com/zhangzhaonnx/demo-maven</url>
     <developerConnection>scm:git:https://github.com/zhangzhaonnx/demo-maven.git</developerConnection>
+    <tag>HEAD</tag>
   </scm>
 
   <profiles>
@@ -66,35 +66,6 @@
               <serverId>nexus-releases</serverId>
               <nexusUrl>http://localhost:8081/nexus/</nexusUrl>
               <skipStaging>ture</skipStaging>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-    <profile>
-      <id>development</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.sonatype.plugins</groupId>
-            <artifactId>nexus-staging-maven-plugin</artifactId>
-            <version>1.5.1</version>
-            <executions>
-              <execution>
-                <id>default-deploy</id>
-                <phase>deploy</phase>
-                <goals>
-                  <goal>deploy</goal>
-                </goals>
-              </execution>
-            </executions>
-            <configuration>
-              <serverId>nexus-snapshots</serverId>
-              <nexusUrl>http://localhost:8081/nexus/</nexusUrl>
-              <skipStaging>true</skipStaging>
             </configuration>
           </plugin>
         </plugins>
