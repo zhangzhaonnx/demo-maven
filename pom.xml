@@ -30,18 +30,16 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>com.jolira</groupId>
-        <artifactId>onejar-maven-plugin</artifactId>
-        <version>1.4.4</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
         <executions>
           <execution>
             <goals>
-              <goal>one-jar</goal>
+              <goal>repackage</goal>
             </goals>
             <configuration>
+              <classifier>spring-boot</classifier>
               <mainClass>com.example.App</mainClass>
-              <attacheToBuild>true</attacheToBuild>
-              <fileName>${project.build.finalName}.${project.packaging}</fileName>
             </configuration>
           </execution>
         </executions>
