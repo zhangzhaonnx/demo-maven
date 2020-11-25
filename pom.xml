@@ -30,20 +30,18 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-shade-plugin</artifactId>
+        <groupId>com.jolira</groupId>
+        <artifactId>onejar-maven-plugin</artifactId>
+        <version>1.4.4</version>
         <executions>
           <execution>
             <goals>
-              <goal>shade</goal>
+              <goal>one-jar</goal>
             </goals>
             <configuration>
-              <shadedArtifactAttached>true</shadedArtifactAttached>
-              <transformers>
-                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                  <mainClass>com.example.App</mainClass>
-                </transformer>
-              </transformers>
+              <mainClass>com.example.App</mainClass>
+              <attacheToBuild>true</attacheToBuild>
+              <fileName>${project.build.finalName}.${project.packaging}</fileName>
             </configuration>
           </execution>
         </executions>
